@@ -1,0 +1,15 @@
+<html><head>
+<meta name="robots" content="noindex, nofollow">
+<style>
+#demo-bandeau{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:99999;background:#111;color:#fff;font:500 13px/1.3 system-ui,sans-serif;padding:9px 16px;border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.25);pointer-events:none;opacity:.92;white-space:nowrap}
+aside.demo-ouvert{display:flex!important;z-index:100000;box-shadow:0 0 0 100vmax rgba(0,0,0,.45)}
+#demo-toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);z-index:99999;background:#111;color:#fff;font:500 14px system-ui,sans-serif;padding:10px 18px;border-radius:10px;display:none}
+</style><meta name="color-scheme" content="light dark"><meta charset="utf-8"></head><body><pre>{"ok":false,"error":"Complétez le client, les travaux et les prix avant de télécharger la soumission."}</pre><div class="json-formatter-container"></div>
+<div id="demo-bandeau">Démonstration — données fictives</div>
+<div id="demo-toast">Démo : rien n'est enregistré.</div>
+<script>
+(function(){var t=document.getElementById('demo-toast');function s(e){e.preventDefault();t.style.display='block';clearTimeout(window.__dt);window.__dt=setTimeout(function(){t.style.display='none'},1800)}
+document.addEventListener('submit',s,true);
+var as=document.querySelector('aside');document.addEventListener('click',function(e){if(e.target.closest('[aria-label="Ouvrir le menu"]')){e.preventDefault();as&&as.classList.add('demo-ouvert');return}if(as&&as.classList.contains('demo-ouvert')&&!e.target.closest('aside'))as.classList.remove('demo-ouvert')},true);
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-demo-mort]');if(a)s(e)},true);})();
+</script></body></html>
